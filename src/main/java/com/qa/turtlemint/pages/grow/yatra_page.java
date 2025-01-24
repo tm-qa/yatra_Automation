@@ -10,6 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import java.io.IOException;
+
 public class yatra_page extends TestBase {
     String url;
 
@@ -36,7 +38,7 @@ public class yatra_page extends TestBase {
     }
 
 
-    public void yatra_pge() {
+    public void yatra_pge() throws IOException {
 
         TestUtil.sendKeys(email, "salesdemo@tsi-yatra.com", "\"salesdemo@tsi-yatra.com\"  email entered");
         WebCommands.staticSleep(5000);
@@ -58,6 +60,7 @@ public class yatra_page extends TestBase {
         WebCommands.staticSleep(5000);
         Assert.assertEquals(path, "https://secure.yatra.com/images/theme1/b2b/banners/1734352110_Webiste_banner_health_and_life_322x311.jpg");
         WebCommands.staticSleep(5000);
+        TestUtil.getFullPageScreenShot();
 
     }
 }
