@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import util.RetryAnalyser;
 import util.iTestListener;
 
+import java.io.IOException;
+
 @Listeners(iTestListener.class)
 @Test(groups = {"yatra"})
 public class turtlemintYatra_image_test extends TestBase {
@@ -23,7 +25,7 @@ public class turtlemintYatra_image_test extends TestBase {
     }
 
     @Test//(retryAnalyzer = RetryAnalyser.class)
-    public void yatraImagesVerify() {
+    public void yatraImagesVerify() throws IOException {
         y.yatra_pge();
     }
 
