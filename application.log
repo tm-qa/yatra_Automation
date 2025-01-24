@@ -1,0 +1,54 @@
+2025-01-24 15:15:20,844  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: null
+2025-01-24 15:15:46,418  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:15:46,423  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:16:44,598  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:16:44,603  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:17:10,825  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:17:10,829  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:17:33,443  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:17:33,447  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:18:51,307  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:18:51,311  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:20:13,925  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:20:52,802  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:21:01,021  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:21:01,714  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:21:04,675  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:21:05,454  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:21:53,028  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:21:54,686  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:22:02,938  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> "salesdemo@tsi-yatra.com"  email entered
+2025-01-24 15:22:08,033  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> continue button clicked
+2025-01-24 15:22:13,107  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> "b2bdemo@24"  password entered
+2025-01-24 15:22:18,179  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> continue button clicked
+2025-01-24 15:22:33,449  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:22:34,222  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:22:42,449  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> "salesdemo@tsi-yatra.com"  email entered
+2025-01-24 15:23:20,280  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:23:21,955  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:23:30,133  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> "salesdemo@tsi-yatra.com"  email entered
+2025-01-24 15:23:35,212  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> continue button clicked
+2025-01-24 15:23:40,288  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> "b2bdemo@24"  password entered
+2025-01-24 15:23:45,359  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> continue button clicked
+2025-01-24 15:24:05,606  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:24:06,430  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:25:15,616  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:25:17,636  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:25:25,866  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> "salesdemo@tsi-yatra.com"  email entered
+2025-01-24 15:25:25,913  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> continue button clicked
+2025-01-24 15:25:26,193  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> "b2bdemo@24"  password entered
+2025-01-24 15:25:26,229  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> continue button clicked
+2025-01-24 15:25:47,238  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:25:48,212  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:27:04,627  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:27:06,274  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:27:14,573  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> "salesdemo@tsi-yatra.com"  email entered
+2025-01-24 15:27:14,628  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> continue button clicked
+2025-01-24 15:27:14,846  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> "b2bdemo@24"  password entered
+2025-01-24 15:27:14,883  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> continue button clicked
+2025-01-24 15:30:04,687  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> Browser name: chrome
+2025-01-24 15:30:06,919  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> osName: Mac OS X
+2025-01-24 15:30:15,144  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> "salesdemo@tsi-yatra.com"  email entered
+2025-01-24 15:30:15,197  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> continue button clicked
+2025-01-24 15:30:15,404  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> "b2bdemo@24"  password entered
+2025-01-24 15:30:15,447  INFO [main] LogUtils:26 -  AUTOMATION_LOG: ==> continue button clicked
