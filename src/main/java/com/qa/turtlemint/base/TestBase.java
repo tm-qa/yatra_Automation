@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -33,53 +34,52 @@ public class TestBase {
         }
     }
 
+        public static void initialization() {
+            String browserName = prop.getProperty("browser");
+            LogUtils.info("Browser name: " + browserName);
 
-    public static void initialization() {
-        String browserName = prop.getProperty("browser");
-        LogUtils.info("Browser name: " + browserName);
-        if (browserName.equals("chrome")) {
-            //driver = WebDriverManager.chromedriver().create();
-            ChromeOptions options = new ChromeOptions();
-   //         options.setBrowserVersion("119");
+            if (browserName.equals("chrome")) {
+                ChromeOptions options = new ChromeOptions();
 
- //           driver = new ChromeDriver(options);
-//            options.addArguments("start-maximized"); // open Browser in maximized mode
-//            options.addArguments("--incognito");
-            String osName = System.getProperty("os.name");
-            LogUtils.info("osName: " + osName);
-            if (osName.toLowerCase().contains("linux")) {
-//					WebDriverManager.chromedriver().setup();
-                options.addArguments("--headless");
-                options.addArguments("--incognito");
-                options.addArguments(("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
-                        + "AppleWebKit/537.36 (KHTML, like Gecko)"
-                        + "Chrome/103.0.0.0 Safari/537.36"));
-                System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-                options.addArguments("disable-infobars"); // disabling infobars
-                options.addArguments("--disable-extensions"); // disabling extensions
-//				options.addArguments("--disable-gpu"); // applicable to windows os only
-                options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-                options.addArguments("--no-sandbox"); // Bypass OS security model
-//				WebDriver driver = new ChromeDriver(options);
+                // Read Proxy settings from config.properties
+                String proxyHost = prop.getProperty("http.proxyHost");
+                String proxyPort = prop.getProperty("http.proxyPort");
 
+                // Set the proxy in ChromeOptions
+                if (proxyHost != null && !proxyHost.isEmpty() && proxyPort != null && !proxyPort.isEmpty()) {
+                    String proxy = proxyHost + ":" + proxyPort;
+                    options.addArguments("--proxy-server=http://" + proxy);
+                    LogUtils.info("Using Proxy: " + proxy);
+                }
+
+                String osName = System.getProperty("os.name");
+                LogUtils.info("osName: " + osName);
+
+                if (osName.toLowerCase().contains("linux")) {
+                    options.addArguments("--headless");
+                    options.addArguments("--incognito");
+                    options.addArguments("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/103.0.0.0");
+                    System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+                    options.addArguments("disable-infobars");
+                    options.addArguments("--disable-extensions");
+                    options.addArguments("--disable-dev-shm-usage");
+                    options.addArguments("--no-sandbox");
+                }
+
+                driver = new ChromeDriver(options);
+
+                Dimension newDimension = new Dimension(1200, 800);
+                driver.manage().window().setSize(newDimension);
+                Dimension currentDimension = driver.manage().window().getSize();
+                int height = currentDimension.getHeight();
+                int width = currentDimension.getWidth();
+                System.out.println("Current height: " + height);
+                System.out.println("Current width: " + width);
+
+                driver.manage().deleteAllCookies();
+                driver.manage().timeouts().pageLoadTimeout(TestUtil.Page_load_time, TimeUnit.SECONDS);
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.implicit_wait));
+                driver.get(System.getProperty("url"));
             }
-               driver = new ChromeDriver(options);
-
-            Dimension newDimension = new Dimension(1200, 800);
-            driver.manage().window().setSize(newDimension);
-            Dimension currentDimension = driver.manage().window().getSize();
-            int height = currentDimension.getHeight();
-            int width = currentDimension.getWidth();
-            System.out.println("Current height: " + height);
-            System.out.println("Current width: " + width);
-            driver.manage().deleteAllCookies();
-
-            driver.manage().timeouts().pageLoadTimeout(TestUtil.Page_load_time, TimeUnit.SECONDS);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.implicit_wait));
-
-        //    driver.get(prop.getProperty("url"));
-            driver.get(System.getProperty("url"));
         }
-
-    }
 }
