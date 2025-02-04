@@ -42,8 +42,8 @@ public class TestBase {
                 ChromeOptions options = new ChromeOptions();
 
                 // Read Proxy settings from config.properties
-                String proxyHost = prop.getProperty("http.proxyHost");
-                String proxyPort = prop.getProperty("http.proxyPort");
+                String proxyHost = prop.getProperty("https.proxyHost");
+                String proxyPort = prop.getProperty("https.proxyPort");
 
                 // Set the proxy in ChromeOptions
                 if (proxyHost != null && !proxyHost.isEmpty() && proxyPort != null && !proxyPort.isEmpty()) {
