@@ -289,7 +289,7 @@ public class WebCommands {
     public void waitForElementVisible(String locator) {
         LogUtils.info("waitForElementVisible : Start => " + locator);
         try {
-            wait = new WebDriverWait(driver, Duration.ofSeconds(30), Duration.ofSeconds(50));
+            wait = new WebDriverWait(driver, 30, 50);
             WebElement result = wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator(locator)));
             LogUtils.info("waitForElementVisible : End => " + locator + ", Result: " + result);
         } catch (Exception e) {
@@ -303,7 +303,7 @@ public class WebCommands {
     public void waitForElementPresent(String locator) {
         LogUtils.info("waitForElementPresent : Start => " + locator);
         try {
-            wait = new WebDriverWait(driver, Duration.ofSeconds(30), Duration.ofSeconds(50));
+            wait = new WebDriverWait(driver, 30, 50);
             WebElement result = wait.until(ExpectedConditions.presenceOfElementLocated(getLocator(locator)));
             LogUtils.info("waitForElementPresent : End => " + locator + ", Result: " + result);
         } catch (Exception e) {
@@ -316,33 +316,6 @@ public class WebCommands {
 
     }
 
-    public boolean isElementDisplayed(String locator) {
-        try {
-            try {
-                new WebDriverWait(driver, Duration.ofSeconds(2), Duration.ofSeconds(40)).until(ExpectedConditions.presenceOfElementLocated(getLocator(locator)));
-            } catch (Exception e) {
-            }
-            WebElement element = getElement(locator);
-            LogUtils.info("Checking element:" + element);
-            if (element == null) {
-                return false;
-            }
-            LogUtils.info("Checking element:" + element.isDisplayed());
-            return element.isDisplayed();
-        } catch (Exception e) {
-
-            e.printStackTrace();
-            LogUtils.info("Error while checking visibility of element:" + e.getMessage());
-            //Allure.step("Could not locate element with locator: " + locator + "\n" + e.getMessage(), Status.FAILED);
-
-            getScreenShot();
-
-//            Assert.assertEquals("",
-//                    e.toString() + "\nCould not locate element with locator: " + locator + "\n" + e.getMessage());
-            Assert.assertEquals("", "Error while trying to locate element with locator: " + locator);
-        }
-        return false;
-    }
 
     public void setText(String locator, String inputText) {
         WebElement element = null;
@@ -393,17 +366,10 @@ public class WebCommands {
         return driver;
     }
 
-    private void angularWait() {
-        if (wait == null) {
-            wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-
-        }
-        // wait.until(AdditionalWait.angularHasFinishedProcessing());
-    }
 
     public WebElement waitElementToBeClickable(String locator) {
 //        WebElement element = getElement(locator);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, 20);
         return wait.until(ExpectedConditions.elementToBeClickable(getLocator(locator)));
 
     }
@@ -1092,10 +1058,7 @@ public class WebCommands {
         act.moveToElement(getElement(locator)).build().perform();
     }
 
-    public void waitForWindowToClose() {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(20), Duration.ofSeconds(40));
-        wait.until(ExpectedConditions.numberOfWindowsToBe(1));
-    }
+
 
     public void switchToParentWindow() {
         try {

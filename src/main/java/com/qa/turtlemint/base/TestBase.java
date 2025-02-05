@@ -63,9 +63,9 @@ public class TestBase {
             System.out.println("Current width: " + width);
             driver.manage().deleteAllCookies();
             driver.manage().timeouts().pageLoadTimeout(TestUtil.Page_load_time, TimeUnit.SECONDS);
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.implicit_wait));
-            driver.get(prop.getProperty("url"));
-//            driver.get(System.getProperty("url"));
+            driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+      //      driver.get(prop.getProperty("url"));
+            driver.get(System.getProperty("url"));
         }
     }
 }

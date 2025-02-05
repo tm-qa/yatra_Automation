@@ -76,65 +76,45 @@ public class TestUtil {
     }
 
     public static void click(WebElement element, String msg) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
         LogUtils.info(msg);
     }
 
     public static void sendKeys(WebElement element, String keys, String msg) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.sendKeys(keys);
         LogUtils.info(msg);
     }
 
-    public static void clear(WebElement element, String msg) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-        element.clear();
-        LogUtils.info(msg);
 
-    }
 
     public static void IsDisplayed(WebElement element, String msg) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.isDisplayed();
         LogUtils.info(msg);
     }
 
     public static void IsSelected(WebElement element, String msg) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.isSelected();
         LogUtils.info(msg);
     }
 
     public static void waitElementToBeClickable(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+        WebDriverWait wait = new WebDriverWait(driver,10);
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public static void waitUntilTextToPresent(WebElement element, String text) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.textToBePresentInElement(element, text));
     }
 
-    public static void waitUntilElementToBeVisible(By element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
-    }
-
-    public static void waitUntilInvisibilityOfElement(By element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(element)));
-    }
-
-    public static void waitUntilVisibilityOfElement(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
 
     public static void fluentWait(By element, String msg) {
         Wait<WebDriver> wait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(10))
