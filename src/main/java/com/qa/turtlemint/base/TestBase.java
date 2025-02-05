@@ -30,7 +30,7 @@ public class TestBase {
         String browserName = prop.getProperty("browser");
         LogUtils.info("Browser name: " + browserName);
         if (browserName.equals("chrome")) {
-            //driver = WebDriverManager.chromedriver().create();
+            WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
             //         options.setBrowserVersion("119");
             //           driver = new ChromeDriver(options);
@@ -39,7 +39,7 @@ public class TestBase {
             String osName = System.getProperty("os.name");
             LogUtils.info("osName: " + osName);
             if (osName.toLowerCase().contains("linux")) {
-//					WebDriverManager.chromedriver().setup();
+					WebDriverManager.chromedriver().setup();
                 options.addArguments("--headless");
                 options.addArguments("--incognito");
                 options.addArguments(("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
