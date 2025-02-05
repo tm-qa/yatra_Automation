@@ -1,5 +1,4 @@
 package com.qa.turtlemint.base;
-
 import com.qa.turtlemint.util.LogUtils;
 import com.qa.turtlemint.util.TestUtil;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -7,21 +6,16 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
 public class TestBase {
-
     public static WebDriver driver;
     public static Properties prop;
-
     public TestBase() {
-
         try {
             prop = new Properties();
             FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/com/qa/turtlemint/config/config.properties");
@@ -32,17 +26,14 @@ public class TestBase {
             e.printStackTrace();
         }
     }
-
-
     public static void initialization() {
         String browserName = prop.getProperty("browser");
         LogUtils.info("Browser name: " + browserName);
         if (browserName.equals("chrome")) {
             //driver = WebDriverManager.chromedriver().create();
             ChromeOptions options = new ChromeOptions();
-   //         options.setBrowserVersion("119");
-
- //           driver = new ChromeDriver(options);
+            //         options.setBrowserVersion("119");
+            //           driver = new ChromeDriver(options);
 //            options.addArguments("start-maximized"); // open Browser in maximized mode
 //            options.addArguments("--incognito");
             String osName = System.getProperty("os.name");
@@ -61,10 +52,8 @@ public class TestBase {
                 options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
                 options.addArguments("--no-sandbox"); // Bypass OS security model
 //				WebDriver driver = new ChromeDriver(options);
-
             }
-               driver = new ChromeDriver(options);
-
+            driver = new ChromeDriver(options);
             Dimension newDimension = new Dimension(1200, 800);
             driver.manage().window().setSize(newDimension);
             Dimension currentDimension = driver.manage().window().getSize();
@@ -73,13 +62,13 @@ public class TestBase {
             System.out.println("Current height: " + height);
             System.out.println("Current width: " + width);
             driver.manage().deleteAllCookies();
-
             driver.manage().timeouts().pageLoadTimeout(TestUtil.Page_load_time, TimeUnit.SECONDS);
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.implicit_wait));
-
-        //    driver.get(prop.getProperty("url"));
-            driver.get(System.getProperty("url"));
+            driver.get(prop.getProperty("url"));
+//            driver.get(System.getProperty("url"));
         }
-
     }
 }
+
+
+

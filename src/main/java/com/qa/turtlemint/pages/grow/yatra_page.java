@@ -40,6 +40,11 @@ public class yatra_page extends TestBase {
 
     public void yatra_pge() throws IOException {
 
+
+        WebCommands.staticSleep(5000);
+        TestUtil.getFullPageScreenShot();
+        WebCommands.staticSleep(5000);
+
         TestUtil.sendKeys(email, "salesdemo@tsi-yatra.com", "\"salesdemo@tsi-yatra.com\"  email entered");
         WebCommands.staticSleep(5000);
         TestUtil.click(continuee, "continue button clicked");
