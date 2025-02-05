@@ -53,6 +53,7 @@ public class TestBase {
                 options.addArguments("--no-sandbox"); // Bypass OS security model
 //				WebDriver driver = new ChromeDriver(options);
             }
+            WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(options);
             Dimension newDimension = new Dimension(1200, 800);
             driver.manage().window().setSize(newDimension);
