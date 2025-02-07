@@ -54,7 +54,7 @@ public class TestBase {
                 options.addArguments(("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
                         + "AppleWebKit/537.36 (KHTML, like Gecko)"
                         + "Chrome/103.0.0.0 Safari/537.36"));
-                System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+                System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
                 options.addArguments("disable-infobars"); // disabling infobars
                 options.addArguments("--disable-extensions"); // disabling extensions
 //				options.addArguments("--disable-gpu"); // applicable to windows os only
