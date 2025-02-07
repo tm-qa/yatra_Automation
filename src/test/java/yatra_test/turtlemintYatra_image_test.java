@@ -21,6 +21,7 @@ public class turtlemintYatra_image_test extends TestBase {
         initialization();
          y = new yatra_page();
 
+
     }
 
     @Test//(retryAnalyzer = RetryAnalyser.class)
