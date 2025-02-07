@@ -26,6 +26,7 @@ public class turtlemintYatra_image_test extends TestBase {
 
     @Test//(retryAnalyzer = RetryAnalyser.class)
     public void yatraImagesVerify() throws IOException {
+        System.out.println("url opened");
         y.yatra_pge();
     }
 
