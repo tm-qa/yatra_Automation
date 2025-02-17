@@ -46,10 +46,14 @@ public class yatra_page extends TestBase {
 
     public void yatra_pge() throws IOException {
 
+
+        WebCommands.staticSleep(5000);
+        TestUtil.getFullPageScreenShot();
+        WebCommands.staticSleep(5000);
+
         Date currentdate = new Date();
         TakesScreenshot scrShot = ((TakesScreenshot) driver);
-        File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
-        File DestFile = new File("/Users/tejasbahadure/Downloads/yatra_Automation/"+currentdate+".jpg");
+
 
 
         TestUtil.sendKeys(email, "salesdemo@tsi-yatra.com", "\"salesdemo@tsi-yatra.com\"  email entered");
@@ -73,6 +77,8 @@ public class yatra_page extends TestBase {
         WebCommands.staticSleep(5000);
         Assert.assertEquals(path, "https://secure.yatra.com/images/theme1/b2b/banners/1734352110_Webiste_banner_health_and_life_322x311.jpg");
         WebCommands.staticSleep(5000);
+        File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
+        File DestFile = new File("/Users/tejasbahadure/Downloads/yatra_Automation/"+currentdate+".jpg");
         FileUtils.copyFile(SrcFile, DestFile);
         TestUtil.getFullPageScreenShot();
 
