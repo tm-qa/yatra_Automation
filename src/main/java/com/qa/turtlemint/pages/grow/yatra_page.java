@@ -3,14 +3,19 @@ package com.qa.turtlemint.pages.grow;
 import com.qa.turtlemint.base.TestBase;
 import com.qa.turtlemint.commands.WebCommands;
 import com.qa.turtlemint.util.TestUtil;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Date;
 
 public class yatra_page extends TestBase {
     String url;
@@ -38,15 +43,18 @@ public class yatra_page extends TestBase {
     }
 
 
+
     public void yatra_pge() throws IOException {
 
+        Date currentdate = new Date();
+        TakesScreenshot scrShot = ((TakesScreenshot) driver);
+        File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
+        File DestFile = new File("/Users/tejasbahadure/Downloads/yatra_Automation/"+currentdate+".jpg");
 
-        WebCommands.staticSleep(5000);
-        TestUtil.getFullPageScreenShot();
-        WebCommands.staticSleep(5000);
 
         TestUtil.sendKeys(email, "salesdemo@tsi-yatra.com", "\"salesdemo@tsi-yatra.com\"  email entered");
         WebCommands.staticSleep(5000);
+
         TestUtil.click(continuee, "continue button clicked");
         WebCommands.staticSleep(5000);
         TestUtil.sendKeys(password, "b2bdemo@24", "\"b2bdemo@24\"  password entered");
@@ -65,7 +73,9 @@ public class yatra_page extends TestBase {
         WebCommands.staticSleep(5000);
         Assert.assertEquals(path, "https://secure.yatra.com/images/theme1/b2b/banners/1734352110_Webiste_banner_health_and_life_322x311.jpg");
         WebCommands.staticSleep(5000);
+        FileUtils.copyFile(SrcFile, DestFile);
         TestUtil.getFullPageScreenShot();
+
 
     }
 }
